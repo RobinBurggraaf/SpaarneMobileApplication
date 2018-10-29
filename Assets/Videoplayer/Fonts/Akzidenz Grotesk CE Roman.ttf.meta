@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 147388c275bef154886be0fb5bdc12ae
+timeCreated: 1514213400
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Akzidenz Grotesk CE Roman
+  fontNames:
+  - Akzidenz Grotesk CE Roman
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
