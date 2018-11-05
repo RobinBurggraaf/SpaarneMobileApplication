@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameSceneManager : MonoBehaviour
 {
 
-    private static GameManager instance;
+    private static GameSceneManager instance;
 
     public const string MENU = "Menu";
     public const string AR = "AR";
@@ -25,13 +25,13 @@ public class GameManager : MonoBehaviour
         loadLevel(MENU, false);
     }
 
-    public static GameManager Instance
+    public static GameSceneManager Instance
     {
         get
         {
             if (!instance)
             {
-                instance = new GameManager();
+                instance = new GameSceneManager();
             }
 
             return instance;
