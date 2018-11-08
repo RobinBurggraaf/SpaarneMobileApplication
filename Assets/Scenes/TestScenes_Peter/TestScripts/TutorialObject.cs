@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Video;
 
-[CreateAssetMenu(fileName = "new tutorialObject", menuName = "TutorialObjects")]
-public class TutorialObject : ScriptableObject {
+[CreateAssetMenu(fileName = "new protocol", menuName = "ProtocolObjects")]
+public class TutorialObject : ScriptableObject
+{
 
+    public Color32 color;
     public string title;
-    public string description;
+    public string goal;
+    public string materials;
 
-    public Sprite image;
+    public VideoClip video;
 }
