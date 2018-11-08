@@ -9,9 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adc7493007c48d843aa386dec80d2f68, type: 3}
-  m_Name: Panel1
+  m_Name: "A\xEBrogeen"
   m_EditorClassIdentifier: 
-  title: Tutorial Panel 1
-  description: ' Starting Panel -  Starting Panel -  Starting Panel -  Starting Panel
-    -  Starting Panel -  Starting Panel -  Starting Panel -  Starting Panel -  Starting
-    Panel -  Starting Panel -  Starting Panel -  Starting Panel - '
+  color:
+    serializedVersion: 2
+    rgba: 7502830
+  title: "A\xEBrogeen "
+  goal: Preventie van het inademen van micro-organismen, die lang in de lucht blijven
+    zweven.
+  materials: Normale procedure
+  video: {fileID: 0}
