@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc7493007c48d843aa386dec80d2f68, type: 3}
+  m_Name: Druppel
+  m_EditorClassIdentifier: 
+  color:
+    serializedVersion: 2
+    rgba: 4283408878
+  title: Druppel
+  goal: 'Filler '
+  materials: Filler 2
+  video: {fileID: 0}
