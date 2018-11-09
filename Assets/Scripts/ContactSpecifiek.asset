@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adc7493007c48d843aa386dec80d2f68, type: 3}
-  m_Name: Druppel&Contact
+  m_Name: ContactSpecifiek
   m_EditorClassIdentifier: 
   color:
     serializedVersion: 2
-    rgba: 4283408878
-  title: Druppel & Contact
-  goal: Preventie van overdracht van micro-organismen via direct contact (handen),
-    indirect contact (voorwerpen, materialen) en druppels.
+    rgba: 4285627374
+  title: Contact Specifiek
+  goal: Preventie van overdracht van micro-organismen via direct contact (handen)
+    en indirect contact (voorwerpen, materialen).
   materials: "Gebruik indien mogelijk disposable materiaal, anders pati\xEBntgebonden
     houden \uF0B7 Voorwerpen die niet op de kamer kunnen blijven na gebruik reinigen
     en desinfecteren conform protocol \uF0B7 Voorraad kamer niet groter dan voor 24

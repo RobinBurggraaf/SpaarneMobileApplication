@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adc7493007c48d843aa386dec80d2f68, type: 3}
-  m_Name: "A\xEBrogeen&Contact"
+  m_Name: Strike
   m_EditorClassIdentifier: 
   color:
     serializedVersion: 2
-    rgba: 4286295907
-  title: "A\xEBrogeen & Contact"
-  goal: Preventie van overdracht van micro-organismen, die zowel via inademen als
-    door contact overgedragen kunnen worden.
+    rgba: 4288437350
+  title: Strike
+  goal: Preventie van overdracht van MRSA via direct contact (handen) en indirect
+    contact (voorwerpen, materialen en stofdeeltjes).
   materials: "Gebruik indien mogelijk disposable materialen, anders pati\xEBntgebonden
     houden \uF0B7 Voorwerpen die niet op de kamer kunnen blijven na gebruik in de
     sluis reinigen en desinfecteren conform protocol \uF0B7 Voorraad kamer niet groter
