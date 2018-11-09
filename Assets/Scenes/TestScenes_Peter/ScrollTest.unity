@@ -1284,7 +1284,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &479848901
 MonoBehaviour:
@@ -1297,14 +1297,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af81825ff9824ff47b59c339e7757ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuCanvas: {fileID: 0}
+  MenuCanvas: {fileID: 650432673}
   SelectedProtocolCanvas: {fileID: 2122023873}
-  title: {fileID: 181634484}
-  goal: {fileID: 562418950}
+  titleBarText: {fileID: 181634484}
+  titleBarImage: {fileID: 1835001106}
+  goalsHeadline: {fileID: 1607398740}
+  materialsHeadline: {fileID: 1658789995}
+  goals: {fileID: 562418950}
   materials: {fileID: 1886018475}
   buttonAR: {fileID: 268319079}
   buttonVideo: {fileID: 200489615}
-  titleBar: {fileID: 1835001106}
 --- !u!1 &488362070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,7 +1901,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &960223797
 GameObject:
@@ -4620,7 +4622,7 @@ RectTransform:
   - {fileID: 1725851765}
   - {fileID: 1727827072}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

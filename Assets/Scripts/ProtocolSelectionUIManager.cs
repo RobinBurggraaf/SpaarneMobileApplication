@@ -7,26 +7,39 @@ public class ProtocolSelectionUIManager : MonoBehaviour {
 
     public GameObject MenuCanvas;
     public GameObject SelectedProtocolCanvas;
-    public Text title;
-    public Text goal;
+
+    public Text titleBarText;
+    public Image titleBarImage;
+
+
+    public Text goalsHeadline;
+    public Text materialsHeadline;
+
+    public Text goals;
     public Text materials;
+
+
     public GameObject buttonAR;
     public GameObject buttonVideo;
-    public Image titleBar;
 
     public void ProtocolSelected(TutorialObject t){
+        Color convertedColor = t.color;
 
-        title.text = t.title;
-        goal.text = t.goal;
+
+        titleBarImage.color = convertedColor;
+        titleBarText.text = t.title;
+
+        goalsHeadline.color = convertedColor;
+        materialsHeadline.color = convertedColor;
+
+        goals.text = t.goal;
         materials.text = t.materials;
 
-        buttonAR.GetComponent<Image>().color = t.color;
-        //insert AR shit here
-        buttonVideo.GetComponent<Image>().color = t.color;
-        //insert Video shit here
-        titleBar.color = t.color;
-        SelectedProtocolCanvas.SetActive(true);
+        buttonAR.GetComponent<Image>().color = convertedColor;
+        buttonVideo.GetComponent<Image>().color = convertedColor;
         MenuCanvas.SetActive(false);
+        SelectedProtocolCanvas.SetActive(true);
+        
     }
 
 
