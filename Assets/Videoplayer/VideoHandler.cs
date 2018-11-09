@@ -20,6 +20,7 @@ public class VideoHandler : MonoBehaviour
         if (clip)
         {
             videoController.videoClip = clip;
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
             videoController.OpenPlayer();
         }
     }

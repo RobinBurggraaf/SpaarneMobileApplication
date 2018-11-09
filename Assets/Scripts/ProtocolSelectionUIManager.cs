@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
-public class ProtocolSelectionUIManager : MonoBehaviour {
+public class ProtocolSelectionUIManager : MonoBehaviour
+{
+
+    public VideoPlayer player;
 
     public GameObject MenuCanvas;
     public GameObject SelectedProtocolCanvas;
@@ -22,6 +26,11 @@ public class ProtocolSelectionUIManager : MonoBehaviour {
     public GameObject buttonAR;
     public GameObject buttonVideo;
 
+    void Awake()
+    {
+        player.loopPointReached += OnMovieFinished; // loopPointReached is the event for the end of the video
+    }
+
     public void ProtocolSelected(TutorialObject t){
         Color convertedColor = t.color;
 
@@ -33,14 +42,37 @@ public class ProtocolSelectionUIManager : MonoBehaviour {
         materialsHeadline.color = convertedColor;
 
         goals.text = t.goal;
+        goals.color = convertedColor;
+
         materials.text = t.materials;
+        materials.color = convertedColor;
 
         buttonAR.GetComponent<Image>().color = convertedColor;
         buttonVideo.GetComponent<Image>().color = convertedColor;
+        buttonVideo.GetComponent<VideoHandler>().clip = t.video;
         MenuCanvas.SetActive(false);
         SelectedProtocolCanvas.SetActive(true);
+
         
     }
 
+    public void BackToSelectionMenu()
+    {
+        SelectedProtocolCanvas.SetActive(false);
+        MenuCanvas.SetActive(true);
+        
+    }
 
+   public void OpenVideo()
+    {
+        SelectedProtocolCanvas.SetActive(false);
+    }
+
+    void OnMovieFinished(VideoPlayer player)
+    {
+        Debug.Log("Event for movie end called");
+        // turn on previous screen.
+        Screen.orientation = ScreenOrientation.Portrait;
+        SelectedProtocolCanvas.SetActive(true);
+    }
 }

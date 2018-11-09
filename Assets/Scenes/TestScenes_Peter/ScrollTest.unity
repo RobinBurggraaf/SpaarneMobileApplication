@@ -1297,16 +1297,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af81825ff9824ff47b59c339e7757ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuCanvas: {fileID: 650432673}
-  SelectedProtocolCanvas: {fileID: 2122023873}
-  titleBarText: {fileID: 181634484}
-  titleBarImage: {fileID: 1835001106}
-  goalsHeadline: {fileID: 1607398740}
-  materialsHeadline: {fileID: 1658789995}
-  goals: {fileID: 562418950}
-  materials: {fileID: 1886018475}
-  buttonAR: {fileID: 268319079}
-  buttonVideo: {fileID: 200489615}
+  MenuCanvas: {fileID: 0}
+  SelectedProtocolCanvas: {fileID: 0}
+  titleBarText: {fileID: 0}
+  titleBarImage: {fileID: 0}
+  goalsHeadline: {fileID: 0}
+  materialsHeadline: {fileID: 0}
+  goals: {fileID: 0}
+  materials: {fileID: 0}
+  buttonAR: {fileID: 0}
+  buttonVideo: {fileID: 0}
 --- !u!1 &488362070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,10 +2291,10 @@ RectTransform:
   m_Father: {fileID: 1725851765}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -959.99335}
-  m_SizeDelta: {x: 1440, y: 1919.9867}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1106393499
 MonoBehaviour:
@@ -2310,8 +2310,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   greyBoxBig: {fileID: 0}
-  greyBoxSmall: {fileID: 1721561517}
-  bar: {fileID: 1835001106}
+  greyBoxSmall: {fileID: 0}
+  bar: {fileID: 0}
 --- !u!114 &1106393500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4548,7 +4548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2122023874
 MonoBehaviour:
   m_ObjectHideFlags: 0

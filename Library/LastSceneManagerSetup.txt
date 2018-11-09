@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/TestScenes_Peter/Right_Way_Example.unity
+- path: Assets/Scenes/TestScenes_Peter/CompleteUITest.unity
   isLoaded: 1
   isActive: 1

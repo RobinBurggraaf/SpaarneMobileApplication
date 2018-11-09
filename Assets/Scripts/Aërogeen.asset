@@ -15,7 +15,6 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4286295907
   title: "A\xEBrogeen "
-  goal: Preventie van het inademen van micro-organismen, die lang in de lucht blijven
-    zweven.
-  materials: Normale procedure
-  video: {fileID: 0}
+  goal: 'sample text '
+  materials: sample text
+  video: {fileID: 32900000, guid: e495709022f2a374dbd5a0c3eb048cc9, type: 3}

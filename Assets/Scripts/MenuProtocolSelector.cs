@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuProtocolSelector : MonoBehaviour {
+public class MenuProtocolSelector : MonoBehaviour
+{
 
     public List<ProtocolUI> protocolList;
     private ProtocolUI selectedProtocol;
@@ -46,12 +47,12 @@ public class MenuProtocolSelector : MonoBehaviour {
 
     public void ResetButtons()
     {
-        
-        foreach(ProtocolUI p in protocolList)
+
+        foreach (ProtocolUI p in protocolList)
         {
             p.ResetUI();
         }
-        
+
     }
 
 }
