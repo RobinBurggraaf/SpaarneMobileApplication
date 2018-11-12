@@ -12,6 +12,7 @@ public class ProtocolUI : MonoBehaviour
 
     private Color gray = new Color32(239, 238, 238, 255);
     private Color blue = new Color32(29, 156, 155, 255);
+    private Color unselected = new Color32(224, 238, 237, 255);
 
     public void ResetUI()
     {
@@ -25,7 +26,7 @@ public class ProtocolUI : MonoBehaviour
     {
         greyBoxBig.SetActive(false);
         greyBoxSmall.color = Color.white;
-        bar.color = gray;
+        bar.color = unselected;
     }
 
     public void Selected()
