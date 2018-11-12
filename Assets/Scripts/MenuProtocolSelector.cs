@@ -53,6 +53,8 @@ public class MenuProtocolSelector : MonoBehaviour
             p.ResetUI();
         }
 
+        clicked = false;
+        selectedProtocol = null;
     }
 
 }
