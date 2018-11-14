@@ -23,12 +23,8 @@ public class SeekBarController : MonoBehaviour {
 		//fill.sizeDelta = new Vector2(0 , fill.sizeDelta.y);
 
 	    width = progressBar.rect.width;
+	  //  handle.rectTransform.anchoredPosition = new Vector3(30000,230,304);
         Debug.Log("Width is: " + width);
-	}
-
-	void Update(){
-		float x = fill.GetComponent<RectTransform> ().sizeDelta.x;
-
 	}
 	
 	public void Progress(float percent)
@@ -39,7 +35,7 @@ public class SeekBarController : MonoBehaviour {
 
 	    float HandlePos =  percent * width;
 
-	        handle.rectTransform.position = new Vector3(Mathf.Clamp(HandlePos, 0, width), handle.rectTransform.position.y, handle.rectTransform.position.z);
+	        handle.rectTransform.anchoredPosition = new Vector3(Mathf.Clamp(HandlePos, 0, width), 0, 0);
         Debug.Log(handle.rectTransform.position);
 	    }
 
