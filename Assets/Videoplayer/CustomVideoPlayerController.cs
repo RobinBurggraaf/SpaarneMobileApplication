@@ -14,7 +14,7 @@ public class CustomVideoPlayerController : MonoBehaviour {
 
 
     // buttons and such
-	public Image PlayButtonIcon;
+//	public Image PlayButtonIcon;
 	public Sprite PlayButton;
 	public Sprite PauseButton;
     public GameObject seekbar;
@@ -43,7 +43,7 @@ public class CustomVideoPlayerController : MonoBehaviour {
             videoPlayer.clip = _videoClip;
             double length = videoPlayer.frameCount / videoPlayer.frameRate;
           videoPlayer.Prepare();
-			if(videoPlayer.clip != null) seekBar.totalTime.text = GetTimeString (videoClip.length);
+			//if(videoPlayer.clip != null) seekBar.totalTime.text = GetTimeString (videoClip.length);
             createRenderTexture ();
 			videoDuration = videoClip.length;
 		}
@@ -95,10 +95,10 @@ public class CustomVideoPlayerController : MonoBehaviour {
 		if (videoPlayer.isPlaying) {
 			videoPlayer.Pause ();
 			time = 0;
-			PlayButtonIcon.sprite = PlayButton;
+			//PlayButtonIcon.sprite = PlayButton;
 		} else {
 			videoPlayer.Play ();
-			PlayButtonIcon.sprite = PauseButton;
+			//PlayButtonIcon.sprite = PauseButton;
 		}
 	}
 
@@ -115,7 +115,7 @@ public class CustomVideoPlayerController : MonoBehaviour {
         if (videoPlayer.isPrepared)
         {
             seekBar.Progress((float) videoPlayer.frame / videoPlayer.frameCount);
-            seekBar.remainingTime.text = GetTimeString(videoPlayer.time);
+          //  seekBar.remainingTime.text = GetTimeString(videoPlayer.time);
         }
     }
 		
@@ -132,23 +132,21 @@ public class CustomVideoPlayerController : MonoBehaviour {
 		gameObject.SetActive (false);
 	}
 
-	public void OpenPlayer() {
-	    OnMovieStart();
-        seekbar.GetComponent<CanvasGroup> ().alpha = 1;
-		videoPlayer.time = 0;
-		gameObject.SetActive (true);
-		if (playOnStart) {
-			videoPlayer.playOnAwake = true;
-			videoPlayer.Play ();
-			PlayButtonIcon.sprite = PauseButton;
-		}
-	}
+    public void OpenPlayer()
+    {
+        OnMovieStart();
+        seekbar.GetComponent<CanvasGroup>().alpha = 1;
+        videoPlayer.time = 0;
+        gameObject.SetActive(true);
+        if (playOnStart)
+        {
+            videoPlayer.playOnAwake = true;
+            videoPlayer.Play();
+            //	PlayButtonIcon.sprite = PauseButton;
+        }
+    }
 
-	//public void showPlayer(){
-	//	gameObject.SetActive (true);
-	//}
-
-	private string GetTimeString(double seconds){
+    private string GetTimeString(double seconds){
 		System.TimeSpan time = System.TimeSpan.FromSeconds(seconds);
 		System.DateTime dateTime = System.DateTime.Today.Add(time);
 		return dateTime.ToString("mm:ss");
