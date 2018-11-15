@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
@@ -14,10 +15,15 @@ public class CustomVideoPlayerController : MonoBehaviour {
 
 
     // buttons and such
-//	public Image PlayButtonIcon;
+	public Image PlayButtonIcon;
 	public Sprite PlayButton;
-	public Sprite PauseButton;
-    public GameObject seekbar;
+    public Sprite PauseButton;
+
+    public  List<Button> interactables;
+
+    public CanvasGroup ButtonGroup;
+
+
 
     public bool playOnStart = true;
 
@@ -64,20 +70,26 @@ public class CustomVideoPlayerController : MonoBehaviour {
 	}
 
 	public IEnumerator toggleSeekbarVisibility () {
-        var seekbarTest = seekBar.GetComponent<CanvasGroup>();
 		fadeAway = !fadeAway;
 		if (fadeAway) { // From opaque to transparent
 			for (float i = 1; i >= -0.25f; i -= Time.deltaTime * 2f) {
-				seekbar.GetComponent<CanvasGroup> ().alpha = i;
+				ButtonGroup.alpha = i;
 				yield return null;
 			}
-            seekbarTest.interactable = false;
+
+		    foreach (Button b in interactables)
+		    {
+		        b.interactable = false;
+		    }
 		} else { // From transparent to opaque
 			for (float i = 0; i <= 1; i += Time.deltaTime * 2f) {
-				seekbar.GetComponent<CanvasGroup> ().alpha = i;
+			    ButtonGroup.alpha = i;
 				yield return null;
 			}
-            seekbarTest.interactable = true;
+		    foreach (Button b in interactables)
+		    {
+		        b.interactable = true;
+		    }
         }
 	}
 
@@ -95,10 +107,10 @@ public class CustomVideoPlayerController : MonoBehaviour {
 		if (videoPlayer.isPlaying) {
 			videoPlayer.Pause ();
 			time = 0;
-			//PlayButtonIcon.sprite = PlayButton;
+			PlayButtonIcon.sprite = PauseButton;
 		} else {
 			videoPlayer.Play ();
-			//PlayButtonIcon.sprite = PauseButton;
+			PlayButtonIcon.sprite = PlayButton;
 		}
 	}
 
@@ -135,14 +147,13 @@ public class CustomVideoPlayerController : MonoBehaviour {
     public void OpenPlayer()
     {
         OnMovieStart();
-        seekbar.GetComponent<CanvasGroup>().alpha = 1;
+        ButtonGroup.alpha = 1;
         videoPlayer.time = 0;
         gameObject.SetActive(true);
         if (playOnStart)
         {
             videoPlayer.playOnAwake = true;
             videoPlayer.Play();
-            //	PlayButtonIcon.sprite = PauseButton;
         }
     }
 
