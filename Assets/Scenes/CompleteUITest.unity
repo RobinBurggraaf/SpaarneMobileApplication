@@ -1913,6 +1913,21 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2122023873}
+    - target: {fileID: 114994972351655934, guid: bed602b2ccfdf284d8934c1d4835640b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClosePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 114994972351655934, guid: bed602b2ccfdf284d8934c1d4835640b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 438600864}
+    - target: {fileID: 114994972351655934, guid: bed602b2ccfdf284d8934c1d4835640b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed602b2ccfdf284d8934c1d4835640b, type: 2}
   m_IsPrefabAsset: 0
