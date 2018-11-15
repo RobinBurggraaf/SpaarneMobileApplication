@@ -59,8 +59,8 @@ public class ProtocolSelectionUIManager : MonoBehaviour
     public void BackToSelectionMenu()
     {
         SelectedProtocolCanvas.SetActive(false);
-        SelectedProtocolCanvas.SetActive(true);
-        //GetComponent<MenuProtocolSelector>().ResetButtons();
+        MenuCanvas.SetActive(true);
+        GetComponent<MenuProtocolSelector>().ResetButtons();
     }
 
    public void OpenVideo()
