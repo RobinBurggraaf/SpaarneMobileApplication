@@ -22,7 +22,7 @@ public class SeekBarController : MonoBehaviour {
 		// TODO check progress bar padding and fix the value below
 		//fill.sizeDelta = new Vector2(0 , fill.sizeDelta.y);
 
-	    width = progressBar.rect.width;
+	  
 	  //  handle.rectTransform.anchoredPosition = new Vector3(30000,230,304);
         Debug.Log("Width is: " + width);
 	}
@@ -35,8 +35,10 @@ public class SeekBarController : MonoBehaviour {
 
 	    float HandlePos =  percent * width;
 
-	        handle.rectTransform.anchoredPosition = new Vector3(Mathf.Clamp(HandlePos, 0, width), 0, 0);
+	    handle.rectTransform.anchoredPosition = new Vector3(Mathf.Clamp(HandlePos, 0, width), 0, 0);
         Debug.Log(handle.rectTransform.position);
-	    }
-
+	}
+    public void SetWidth() {
+        width = progressBar.rect.width;
     }
+}

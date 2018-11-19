@@ -33,6 +33,7 @@ public class CustomVideoPlayerController : MonoBehaviour {
 	private float time;
     [SerializeField]
     private float seekbarDuration = 5f;
+    
 
 	public VideoClip videoClip{
 		get {
@@ -58,11 +59,26 @@ public class CustomVideoPlayerController : MonoBehaviour {
 	void Awake()
 	{
 	    videoPlayer.loopPointReached += OnMovieFinished;
+        isShowing = true;
     }
 
 	void Update(){
 	    Seek ();
-	}
+        toggleBarBehaviour();
+
+    }
+
+    private void toggleBarBehaviour() {
+        if (videoPlayer.isPlaying) {
+            if (isShowing) {
+                time += 1 * Time.deltaTime;
+                if (time >= seekbarDuration){
+                    toggleSeekbar();
+                    time = 0;
+                }
+            }
+        }
+    }
 
 	public void toggleSeekbar () {
 		StopCoroutine (toggleSeekbarVisibility ());
@@ -76,7 +92,7 @@ public class CustomVideoPlayerController : MonoBehaviour {
 				ButtonGroup.alpha = i;
 				yield return null;
 			}
-
+            isShowing = false;
 		    foreach (Button b in interactables)
 		    {
 		        b.interactable = false;
@@ -86,6 +102,7 @@ public class CustomVideoPlayerController : MonoBehaviour {
 			    ButtonGroup.alpha = i;
 				yield return null;
 			}
+            isShowing = true;
 		    foreach (Button b in interactables)
 		    {
 		        b.interactable = true;
@@ -107,11 +124,11 @@ public class CustomVideoPlayerController : MonoBehaviour {
 		if (videoPlayer.isPlaying) {
 			videoPlayer.Pause ();
 			time = 0;
-			PlayButtonIcon.sprite = PauseButton;
-		} else {
+            PlayButtonIcon.sprite = PlayButton;
+        } else {
 			videoPlayer.Play ();
-			PlayButtonIcon.sprite = PlayButton;
-		}
+            PlayButtonIcon.sprite = PauseButton;
+        }
 	}
 
 	public void Rewind(){
@@ -149,6 +166,8 @@ public class CustomVideoPlayerController : MonoBehaviour {
         OnMovieStart();
         ButtonGroup.alpha = 1;
         videoPlayer.time = 0;
+        isShowing = true;
+        fadeAway = false;
         gameObject.SetActive(true);
         if (playOnStart)
         {
@@ -169,6 +188,11 @@ public class CustomVideoPlayerController : MonoBehaviour {
         Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
+    private void OnRectTransformDimensionsChange()
+    {
+        seekBar.SetWidth();
+    }
+
     private void OnMovieFinished(VideoPlayer v)
     {
         //rotate orientation terug naar portrait
@@ -177,3 +201,4 @@ public class CustomVideoPlayerController : MonoBehaviour {
         
     }
 }
+
