@@ -159,7 +159,9 @@ public class CustomVideoPlayerController : MonoBehaviour {
 		videoPlayer.Stop ();
 		videoPlayer.time = 0;
 		gameObject.SetActive (false);
-	}
+        Screen.orientation = ScreenOrientation.Portrait;
+
+    }
 
     public void OpenPlayer()
     {

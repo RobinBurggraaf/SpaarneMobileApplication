@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class ProtocolSelectionUIManager : MonoBehaviour
 {
@@ -29,12 +30,13 @@ public class ProtocolSelectionUIManager : MonoBehaviour
     void Awake()
     {
         player.loopPointReached += OnMovieFinished; // loopPointReached is the event for the end of the video
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
     }
 
     public void ProtocolSelected(TutorialObject t){
         Color convertedColor = t.color;
 
-
+        Debug.Log("start");
         titleBarImage.color = convertedColor;
         titleBarText.text = t.title;
 
@@ -52,8 +54,8 @@ public class ProtocolSelectionUIManager : MonoBehaviour
         buttonVideo.GetComponent<VideoHandler>().clip = t.video;
         MenuCanvas.SetActive(false);
         SelectedProtocolCanvas.SetActive(true);
-
-        
+        RememberProtocol.control.protocol = t;
+        Debug.Log("End");
     }
 
     public void BackToSelectionMenu()
@@ -74,5 +76,14 @@ public class ProtocolSelectionUIManager : MonoBehaviour
         // turn on previous screen.
         Screen.orientation = ScreenOrientation.Portrait;
         SelectedProtocolCanvas.SetActive(true);
+    }
+    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    {
+
+        if (RememberProtocol.control.fromAR)
+        {
+            Debug.Log("fackhoeren");
+            ProtocolSelected(RememberProtocol.control.protocol);
+        }
     }
 }

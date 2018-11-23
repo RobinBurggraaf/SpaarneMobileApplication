@@ -24,6 +24,7 @@ namespace GoogleARCore.Examples.HelloAR
     using GoogleARCore;
     using GoogleARCore.Examples.Common;
     using UnityEngine;
+    using UnityEngine.SceneManagement;
 
 #if UNITY_EDITOR
     // Set up touch input propagation while using Instant Preview in the editor.
@@ -145,9 +146,9 @@ namespace GoogleARCore.Examples.HelloAR
                     // Make Andy model a child of the anchor.
                     andyObject.transform.parent = anchor.transform;
                 }
+                
             }
         }
-
         /// <summary>
         /// Check and update the application lifecycle.
         /// </summary>
@@ -156,9 +157,10 @@ namespace GoogleARCore.Examples.HelloAR
             // Exit the app when the 'back' button is pressed.
             if (Input.GetKey(KeyCode.Escape))
             {
-                Application.Quit();
+                SceneManager.LoadScene(0);
+                //    Application.Quit();
             }
-
+                       
             // Only allow the screen to sleep when not tracking.
             if (Session.Status != SessionStatus.Tracking)
             {

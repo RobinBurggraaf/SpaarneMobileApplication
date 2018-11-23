@@ -336,7 +336,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 50
-    m_MaxSize: 125
+    m_MaxSize: 100
     m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -1142,7 +1142,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 50
-    m_MaxSize: 125
+    m_MaxSize: 100
     m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -2557,12 +2557,12 @@ Prefab:
     - target: {fileID: 224543581566013522, guid: a8282b00ecc514043b4051413c9a7c72,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224143347990315660, guid: a8282b00ecc514043b4051413c9a7c72,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114259265792399188, guid: a8282b00ecc514043b4051413c9a7c72,
         type: 2}
@@ -3013,7 +3013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Doel
+  m_Text: Materialen
 --- !u!222 &1658789996
 CanvasRenderer:
   m_ObjectHideFlags: 0
