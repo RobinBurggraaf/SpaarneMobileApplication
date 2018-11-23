@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class ProtocolSelectionUIManager : MonoBehaviour
 {
 
+
+    public GameObject singleton;
     public VideoPlayer player;
 
     public GameObject MenuCanvas;
@@ -48,7 +50,7 @@ public class ProtocolSelectionUIManager : MonoBehaviour
 
         materials.text = t.materials;
         materials.color = convertedColor;
-
+        Debug.Log(buttonAR);
         buttonAR.GetComponent<Image>().color = convertedColor;
         buttonVideo.GetComponent<Image>().color = convertedColor;
         buttonVideo.GetComponent<VideoHandler>().clip = t.video;
@@ -77,13 +79,25 @@ public class ProtocolSelectionUIManager : MonoBehaviour
         Screen.orientation = ScreenOrientation.Portrait;
         SelectedProtocolCanvas.SetActive(true);
     }
+
+    public void GoToAR()
+    {
+        RememberProtocol.control.fromAR = true;
+        SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+        player.loopPointReached -= OnMovieFinished;
+        SceneManager.LoadScene(1);
+    }
+
+
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-
-        if (RememberProtocol.control.fromAR)
-        {
-            Debug.Log("fackhoeren");
-            ProtocolSelected(RememberProtocol.control.protocol);
-        }
+        if(!RememberProtocol.control)
+        Instantiate(singleton);
+        Scene currentScene = SceneManager.GetActiveScene();
+            if (RememberProtocol.control && RememberProtocol.control.fromAR)
+            {
+                ProtocolSelected(RememberProtocol.control.protocol);
+                Debug.Log("wat");
+            }
     }
 }

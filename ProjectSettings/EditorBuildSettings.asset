@@ -11,13 +11,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Videoplayer/VideoPlayer_Demo_Scene.unity
     guid: 9ab14d0bf6f0ac648b14e65a680f548e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CompleteUITest.unity
     guid: 597c31e24e1e0c7469cb9092a3863d12
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/CompleteUITest 1.unity
     guid: f41417a78ccde9646b26ac878265d1b3
-  - enabled: 0
+  - enabled: 1
     path: Assets/GoogleARCore/Examples/HelloAR/Scenes/HelloAR.unity
     guid: e6a6fa04348cb45c9b0221eb19c946da
   m_configObjects: {}

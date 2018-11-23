@@ -11,27 +11,20 @@ public class RememberProtocol : MonoBehaviour {
 
     private void Awake()
     {
-        if (control = null) {
+        if (!control) {
             DontDestroyOnLoad(gameObject);
             control = this;
 
         }
-        else
+        else if (control)
         {
             Destroy(gameObject);
         }
     }
 
-    public void goToAr() {
-        fromAR = false;
-        SceneManager.LoadScene(1);
-    }
+
     public void backToProtocol()
     {
-        fromAR = true;
         SceneManager.LoadScene(0);
-        
-        Debug.Log("sceneloadedbitches");
-
     }
 }
