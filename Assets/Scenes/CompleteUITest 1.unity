@@ -1044,7 +1044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &268319080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2867,12 +2867,12 @@ Prefab:
     - target: {fileID: 224543581566013522, guid: a8282b00ecc514043b4051413c9a7c72,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224143347990315660, guid: a8282b00ecc514043b4051413c9a7c72,
         type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114259265792399188, guid: a8282b00ecc514043b4051413c9a7c72,
         type: 2}
@@ -3309,7 +3309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Doel
+  m_Text: Materialen
 --- !u!222 &1658789996
 CanvasRenderer:
   m_ObjectHideFlags: 0

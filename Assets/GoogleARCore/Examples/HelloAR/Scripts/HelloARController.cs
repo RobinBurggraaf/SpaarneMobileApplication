@@ -55,6 +55,8 @@ namespace GoogleARCore.Examples.HelloAR
         /// A model to place when a raycast from a user touch hits a feature point.
         /// </summary>
         public GameObject AndyPointPrefab;
+        public int numberOfObjectsAllowed = 1;
+        private int currentNumberOfObjects = 0;
 
         /// <summary>
         /// A gameobject parenting UI for displaying the "searching for planes" snackbar.
@@ -76,6 +78,9 @@ namespace GoogleARCore.Examples.HelloAR
         /// True if the app is in the process of quitting due to an ARCore connection error, otherwise false.
         /// </summary>
         private bool m_IsQuitting = false;
+
+        public GameObject andyObject;
+        public ZoomObject zoom;
 
         /// <summary>
         /// The Unity Update() method.
@@ -131,24 +136,35 @@ namespace GoogleARCore.Examples.HelloAR
                     else
                     {
                         prefab = AndyPlanePrefab;
+
                     }
 
                     // Instantiate Andy model at the hit pose.
-                    var andyObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
+                    if (currentNumberOfObjects == 0)
+                    {
+                        andyObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
+                        zoom.andyObject = andyObject;
+                        currentNumberOfObjects++;
 
-                    // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
-                    andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
 
-                    // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
-                    // world evolves.
-                    var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+                        // Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
+                        andyObject.transform.Rotate(0, k_ModelRotation, 0, Space.Self);
 
-                    // Make Andy model a child of the anchor.
-                    andyObject.transform.parent = anchor.transform;
+                        // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
+                        // world evolves.
+                        var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+
+                        // Make Andy model a child of the anchor.
+                        andyObject.transform.parent = anchor.transform;
+
+                    }
                 }
-                
+
             }
+
         }
+
+
         /// <summary>
         /// Check and update the application lifecycle.
         /// </summary>
@@ -160,7 +176,7 @@ namespace GoogleARCore.Examples.HelloAR
                 SceneManager.LoadScene(0);
                 //    Application.Quit();
             }
-                       
+
             // Only allow the screen to sleep when not tracking.
             if (Session.Status != SessionStatus.Tracking)
             {
