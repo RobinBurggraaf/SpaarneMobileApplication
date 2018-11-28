@@ -25,6 +25,7 @@ namespace GoogleARCore.Examples.HelloAR
     using GoogleARCore.Examples.Common;
     using UnityEngine;
     using UnityEngine.SceneManagement;
+    using UnityEngine.UI;
 
 #if UNITY_EDITOR
     // Set up touch input propagation while using Instant Preview in the editor.
@@ -81,32 +82,54 @@ namespace GoogleARCore.Examples.HelloAR
 
         public GameObject andyObject;
         public ZoomObject zoom;
-
+        public Text text;
+        private bool showSearchingUI;
+        private bool turnRightDown = false;
+        private bool turnLeftDown = false;
+        public float turnspeed = 15;
         /// <summary>
         /// The Unity Update() method.
         /// </summary>
+        public void Start()
+        {
+          showSearchingUI = true;
+        }
         public void Update()
         {
+
+            if (turnRightDown)
+            {
+                Debug.Log("analekontsex");
+                andyObject.transform.Rotate(0.0f, 1.0f, 0.0f);
+            }
+            if (turnLeftDown)
+            {
+                Debug.Log("analekontsex");
+                andyObject.transform.Rotate(0.0f, -1.0f, 0.0f);
+            }
+
             _UpdateApplicationLifecycle();
 
             // Hide snackbar when currently tracking at least one plane.
             Session.GetTrackables<DetectedPlane>(m_AllPlanes);
-            bool showSearchingUI = true;
+            
             for (int i = 0; i < m_AllPlanes.Count; i++)
             {
                 if (m_AllPlanes[i].TrackingState == TrackingState.Tracking)
                 {
-                    showSearchingUI = false;
+                    text.text = "Press space key";
+                    //showSearchingUI = false;
                     break;
                 }
             }
-
+            
             SearchingForPlaneUI.SetActive(showSearchingUI);
 
             // If the player has not touched the screen, we are done with this update.
             Touch touch;
             if (Input.touchCount < 1 || (touch = Input.GetTouch(0)).phase != TouchPhase.Began)
             {
+
                 return;
             }
 
@@ -142,6 +165,9 @@ namespace GoogleARCore.Examples.HelloAR
                     // Instantiate Andy model at the hit pose.
                     if (currentNumberOfObjects == 0)
                     {
+
+                        Debug.Log("Peter=ghay");
+                        
                         andyObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
                         zoom.andyObject = andyObject;
                         currentNumberOfObjects++;
@@ -158,13 +184,44 @@ namespace GoogleARCore.Examples.HelloAR
                         andyObject.transform.parent = anchor.transform;
 
                     }
+                    if (currentNumberOfObjects == 1) {
+                        Debug.Log(currentNumberOfObjects);
+                        Debug.Log("1"+showSearchingUI);
+                        showSearchingUI = false;
+                        Debug.Log("2" + showSearchingUI);
+                        if (showSearchingUI == false)
+                        {
+                            Debug.Log("3" + showSearchingUI);
+                            SearchingForPlaneUI.SetActive(false);
+                        }
+                    }
                 }
 
             }
 
+
         }
 
+        public void turnObjectRightDown()
+        {
+            turnRightDown = true;
 
+        }
+        public void turnObjectRightUp()
+        {
+            turnRightDown = false;
+
+        }
+        public void turnObjectLeftDown()
+        {
+            turnLeftDown = true;
+
+        }
+        public void turnObjectLeftUp()
+        {
+            turnLeftDown = false;
+
+        }
         /// <summary>
         /// Check and update the application lifecycle.
         /// </summary>

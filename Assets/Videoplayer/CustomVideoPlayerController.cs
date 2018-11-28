@@ -165,14 +165,21 @@ public class CustomVideoPlayerController : MonoBehaviour {
 
     public void OpenPlayer()
     {
+        Debug.Log("start movie");
         OnMovieStart();
-        ButtonGroup.alpha = 1;
+        ButtonGroup.alpha = 1;  
         videoPlayer.time = 0;
+        Debug.Log(isShowing);
         isShowing = true;
+        Debug.Log(isShowing);
         fadeAway = false;
+        Debug.Log(fadeAway);
         gameObject.SetActive(true);
+        Debug.Log("is nu active");
         if (playOnStart)
         {
+
+            Debug.Log("is playing");
             videoPlayer.playOnAwake = true;
             videoPlayer.Play();
         }
@@ -188,6 +195,8 @@ public class CustomVideoPlayerController : MonoBehaviour {
     {
         //rotate orientation naar landscape
         Screen.orientation = ScreenOrientation.LandscapeLeft;
+        Debug.Log("rotated movie");
+
     }
 
     private void OnRectTransformDimensionsChange()
