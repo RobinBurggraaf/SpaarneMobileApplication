@@ -83,6 +83,8 @@ namespace GoogleARCore.Examples.HelloAR
         public GameObject andyObject;
         public ZoomObject zoom;
         public Text text;
+
+        public GameObject InteractionUI;
         private bool showSearchingUI;
         private bool turnRightDown = false;
         private bool turnLeftDown = false;
@@ -99,12 +101,10 @@ namespace GoogleARCore.Examples.HelloAR
 
             if (turnRightDown)
             {
-                Debug.Log("analekontsex");
                 andyObject.transform.Rotate(0.0f, 1.0f, 0.0f);
             }
             if (turnLeftDown)
             {
-                Debug.Log("analekontsex");
                 andyObject.transform.Rotate(0.0f, -1.0f, 0.0f);
             }
 
@@ -164,10 +164,7 @@ namespace GoogleARCore.Examples.HelloAR
 
                     // Instantiate Andy model at the hit pose.
                     if (currentNumberOfObjects == 0)
-                    {
-
-                        Debug.Log("Peter=ghay");
-                        
+                    {                        
                         andyObject = Instantiate(prefab, hit.Pose.position, hit.Pose.rotation);
                         zoom.andyObject = andyObject;
                         currentNumberOfObjects++;
@@ -193,6 +190,7 @@ namespace GoogleARCore.Examples.HelloAR
                         {
                             Debug.Log("3" + showSearchingUI);
                             SearchingForPlaneUI.SetActive(false);
+                            InteractionUI.SetActive(true);
                         }
                     }
                 }
