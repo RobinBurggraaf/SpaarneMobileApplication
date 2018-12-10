@@ -117,7 +117,7 @@ namespace GoogleARCore.Examples.HelloAR
             {
                 if (m_AllPlanes[i].TrackingState == TrackingState.Tracking)
                 {
-                    text.text = "Press space key";
+                    text.text = "Klik ergens op de witte ondergrond.";
                     //showSearchingUI = false;
                     break;
                 }
